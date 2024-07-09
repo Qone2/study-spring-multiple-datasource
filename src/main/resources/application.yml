@@ -9,6 +9,7 @@ spring:
       password: root
       hikari:
         auto-commit: false
+        pool-name: HikariCP1
     db2:
       driver-class-name: org.mariadb.jdbc.Driver
       jdbc-url: jdbc:mariadb://127.0.0.1:3306/spring_transaction2
@@ -16,6 +17,7 @@ spring:
       password: root
       hikari:
         auto-commit: false
+        pool-name: HikariCP2
 logging:
   level:
     org:
@@ -34,5 +36,9 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
     cache-enabled: false
-  mapper-locations: classpath:mapper/*/*.xml
-  type-aliases-package: com.example.spring_transaction.**.entity
+  db1:
+    mapper-locations: classpath:mapper/user/*.xml
+    type-aliases-package: com.example.spring_transaction.user.entity
+  db2:
+    mapper-locations: classpath:mapper/food/*.xml
+    type-aliases-package: com.example.spring_transaction.food.entity

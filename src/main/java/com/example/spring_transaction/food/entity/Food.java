@@ -1,5 +1,8 @@
 package com.example.spring_transaction.food.entity;
 
+import lombok.Builder;
+
+@Builder
 public class Food {
     private Long id;
 
@@ -20,5 +23,4 @@ public class Food {
     public void setName(String name) {
         this.name = name;
     }
-
 }

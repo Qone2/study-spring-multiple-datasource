@@ -1,5 +1,8 @@
 package com.example.spring_transaction.user.entity;
 
+import lombok.Builder;
+
+@Builder
 public class User {
 
     private Long id;

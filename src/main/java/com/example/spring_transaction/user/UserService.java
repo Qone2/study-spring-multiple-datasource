@@ -18,8 +18,7 @@ public class UserService {
 
     public void saveAndNotRollback() {
 
-        User user = new User();
-        user.setName("Not Rollback User");
+        User user = User.builder().name("John Doe").build();
 
         userMapper.insert(user);
         throw new RuntimeException("Throwing exception");
@@ -97,9 +96,10 @@ public class UserService {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void changeAndCommit(long id, String name) {
-        User newUser = new User();
-        newUser.setId(id);
-        newUser.setName(name);
+        User newUser = User.builder()
+                .id(id)
+                .name(name)
+                .build();
         userMapper.update(newUser);
     }
 
@@ -110,9 +110,7 @@ public class UserService {
 
     @Transactional(propagation = Propagation.NOT_SUPPORTED)
     public void changeAndNotCommit(long id, String name) {
-        User user = new User();
-        user.setId(id);
-        user.setName(name);
+        User user = User.builder().id(id).name(name).build();
         userMapper.update(user);
     }
 
@@ -128,8 +126,7 @@ public class UserService {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void newTransactionNotCommit() {
-        User user = new User();
-        user.setName("Not Commit User");
+        User user = User.builder().name("Not Commit User").build();
         userMapper.insert(user);
         // 강제로 예외를 발생시켜 트랜잭션을 롤백시킴
         throw new RuntimeException("Intentional Exception to Rollback Transaction");
@@ -138,8 +135,7 @@ public class UserService {
     @Transactional
     public void saveAndRollback() {
 
-        User user = new User();
-        user.setName("John Doe");
+        User user = User.builder().name("John Doe").build();
 
         userMapper.insert(user);
 
@@ -149,8 +145,7 @@ public class UserService {
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void saveAndCommit() {
 
-        User user = new User();
-        user.setName("John Doe");
+        User user = User.builder().name("John Doe").build();
 
         userMapper.insert(user);
     }
@@ -159,8 +154,7 @@ public class UserService {
     @Transactional(propagation = Propagation.NOT_SUPPORTED)
     public void saveAndNotCommit() {
 
-        User user = new User();
-        user.setName("John Doe");
+        User user = User.builder().name("John Doe").build();
 
         userMapper.insert(user);
     }
