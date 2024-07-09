@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 @SpringBootTest
 class TestServiceCTest {
 
@@ -18,7 +20,18 @@ class TestServiceCTest {
 
     @Test
     void createDataWithException() {
-//        assertThrows(RuntimeException.class, () -> testServiceC.createDataWithException());
-        testServiceC.createDataWithException();
+        assertThrows(RuntimeException.class, () -> testServiceC.createDataWithException());
+//        testServiceC.createDataWithException();
     }
+
+    @Test
+    void createDataWithException2() {
+        assertThrows(RuntimeException.class, () -> testServiceC.createDataWithException2());
+    }
+
+    @Test
+    void createDataWithException3() {
+        assertThrows(RuntimeException.class, () -> testServiceC.createDataWithException3());
+    }
+
 }

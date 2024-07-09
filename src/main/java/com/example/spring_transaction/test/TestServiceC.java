@@ -23,4 +23,17 @@ public class TestServiceC {
         testServiceB.createFood();
         throw new RuntimeException("Exception occurred");
     }
+
+    @Transactional
+    public void createDataWithException2() {
+        testServiceA.createUser();
+        testServiceB.createFoodWithException();
+    }
+
+    @Transactional("chainedTransactionManager")
+    public void createDataWithException3() {
+        testServiceA.createUser();
+        testServiceB.createFood();
+        throw new RuntimeException("Exception occurred");
+    }
 }
