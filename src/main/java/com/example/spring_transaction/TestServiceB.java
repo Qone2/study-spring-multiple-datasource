@@ -20,4 +20,14 @@ public class TestServiceB {
 
         foodMapper.insert(food);
     }
+
+    @Transactional("transactionManager2")
+    public void createFoodWithException() {
+        Food food = Food.builder()
+                .name("Test Food")
+                .build();
+
+        foodMapper.insert(food);
+        throw new RuntimeException("Exception occurred");
+    }
 }

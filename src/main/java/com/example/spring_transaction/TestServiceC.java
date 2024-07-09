@@ -16,4 +16,11 @@ public class TestServiceC {
         testServiceA.createUser();
         testServiceB.createFood();
     }
+
+    @Transactional
+    public void createDataWithException() {
+        testServiceA.createUser();
+        testServiceB.createFood();
+        throw new RuntimeException("Exception occurred");
+    }
 }

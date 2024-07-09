@@ -7,18 +7,19 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class TestServiceBTest {
+class TestServiceCTest {
 
     @Autowired
-    private TestServiceB testServiceB;
+    private TestServiceC testServiceC;
 
     @Test
-    void createFood() {
-        testServiceB.createFood();
+    void createData() {
+        testServiceC.createData();
     }
 
     @Test
-    void createFoodWithException() {
-        assertThrows(RuntimeException.class, () -> testServiceB.createFoodWithException());
+    void createDataWithException() {
+//        assertThrows(RuntimeException.class, () -> testServiceC.createDataWithException());
+        testServiceC.createDataWithException();
     }
 }
