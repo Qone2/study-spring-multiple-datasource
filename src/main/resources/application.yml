@@ -2,12 +2,20 @@ spring:
   application:
     name: spring-transaction
   datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://127.0.0.1:3306/spring_transaction
-    username: root
-    password: toorroot
-    hikari:
-      auto-commit: false
+    db1:
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://127.0.0.1:3306/spring_transaction
+      username: root
+      password: root
+      hikari:
+        auto-commit: false
+    db2:
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://127.0.0.1:3306/spring_transaction2
+      username: root
+      password: root
+      hikari:
+        auto-commit: false
 logging:
   level:
     org:
