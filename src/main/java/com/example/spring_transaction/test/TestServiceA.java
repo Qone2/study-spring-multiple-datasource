@@ -1,4 +1,4 @@
-package com.example.spring_transaction;
+package com.example.spring_transaction.test;
 
 import com.example.spring_transaction.user.entity.User;
 import com.example.spring_transaction.user.mapper.UserMapper;

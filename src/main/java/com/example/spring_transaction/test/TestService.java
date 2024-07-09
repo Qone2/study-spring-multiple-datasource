@@ -1,4 +1,4 @@
-package com.example.spring_transaction;
+package com.example.spring_transaction.test;
 
 import com.example.spring_transaction.food.FoodService;
 import com.example.spring_transaction.user.entity.User;

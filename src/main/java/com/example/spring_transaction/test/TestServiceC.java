@@ -1,4 +1,4 @@
-package com.example.spring_transaction;
+package com.example.spring_transaction.test;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
